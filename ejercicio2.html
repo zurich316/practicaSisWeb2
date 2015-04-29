@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<script>
+		function separar(texto)
+		{	
+			return texto.split(" ");
+		}
+		function mayuscula_primera(palabra)
+		{
+			return palabra.charAt(0).toUpperCase()+palabra.slice(1);
+		}
+		function capitalizar()
+		{	
+			var texto = document.getElementById('input').value;
+			var palabras = separar(texto);
+			for(c=0;c<palabras.length;c++)
+			{
+				palabras[c]=mayuscula_primera(palabras[c]);
+			}
+			var resultado=palabras.join(" ");
+			document.getElementById('result').value=resultado;
+		}
+
+
+
+		</script>
+	</head>
+	<body>
+		String: <input type="text" id="input">
+		<br>
+		<textarea id="result" cols="30" rows="10"></textarea>
+		<br>
+		<button onclick="capitalizar()">Calcular</button>
+	</body>
+</html>

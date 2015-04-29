@@ -1,0 +1,28 @@
+<html>
+	<head>
+	<script >
+	function boton()
+	{	
+		var sum=0;
+		var num = document.getElementById('entrada').value;
+		for(i=0;i<num.length;i++)
+		{
+			num = num.replace(',','')
+		}
+		num.split("");
+		for(i=0;i<num.length;i++)
+		{
+			sum=eval(sum+"+"+num[i]);
+		}
+		document.getElementById('salida').value = sum;
+	}
+	</script>
+	</head>
+
+	<body>
+		Entrada: <input type="text" name="entrada" id="entrada">
+		<br>
+		Salida: <input type="text" name="salida" id="salida">
+		<button onclick="boton()">Calcular</button>
+	</body>
+</html>

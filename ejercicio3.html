@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<script>
+		function insertar_fila()
+		{
+			var tabla = document.getElementById('tabla');
+			var row = tabla.insertRow(tabla.rows.length);
+			var cell1 = row.insertCell(0);
+    		var cell2 = row.insertCell(1);
+    		cell1.innerHTML = "Fila"+ tabla.rows.length +"Celda1";
+    		cell2.innerHTML = "Fila"+ tabla.rows.length +"Celda2";
+
+
+		}
+		</script>
+	</head>
+	<body>
+		<table id="tabla" border="1">  
+			<tr>
+				<td>Fila1 celda1</td>  
+				<td>Fila1 celda2</td>
+			</tr>  
+			<tr>
+				<td>Fila2 celda1</td>  
+				<td>Fila2 celda2</td>
+			</tr>  
+		</table><br>  
+		<input type="button" onclick="insertar_fila()" value="Insertar Fila">
+	</body>
+</html>

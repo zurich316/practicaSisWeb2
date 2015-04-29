@@ -1,0 +1,32 @@
+<html>
+	<head>
+
+	
+	</head>
+	<body>
+		Pais: <select name="pais" id="pais" onChange="add()">
+		<option value="">Selecciona un pais</option>
+		</select>
+		<br>
+		Ciudad: <select name="ciudad" id="ciudad"></select>
+	</body>
+	<script>
+	var paises = [{id:1, name: "Bolivia"},{id:2, name: "Brasil"},{id:3, name: "USA"}]
+	var ciudades = [{id:1,country_id: 1, name: "Cochabamba"},{id:2,country_id: 1, name: "La Paz"},{id:3,country_id: 2, name: "Rio de Janeiro"}, {id:4,country_id: 2, name: "San Pablo"}, {id:5, country_id: 3, name: "Washington"}, {id:6,country_id: 3, name: "Nueva York"}]
+	function add()
+	{
+		for(var i = 0; i < paises.length; i++){
+				    var opt = options[i];
+				    var el = document.createElement("tr");
+				    el.textContent = opt;
+				    el.value = opt;
+				    city.appendChild(el);
+				}
+	}
+	
+
+
+var arr=[{key1:'value1'},{key2:'value2'}];
+console.log(arr[0].key1);
+	</script>
+</html>

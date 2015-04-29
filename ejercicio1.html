@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<script>
+		function trueYear(year)
+		{
+			return ((year%4==0) && (year%100!=0))|| (year%400==0)
+		}
+		function bisiestos(start_year, end_year)
+		{
+			var vector = [];
+			for(; start_year < end_year; start_year++)
+			{
+				if(trueYear(start_year))
+				{
+					vector.push(start_year);
+				}
+			}
+			return vector
+		}
+		function mostrar_bisiestos()
+		{
+			var inicio = document.getElementById('year1').value;
+			var fin = document.getElementById('year2').value;
+			var years = bisiestos(inicio,fin);
+			years.forEach(function(year)
+			{
+				document.getElementById('result').innerHTML += year.toString() + "\n";
+			});
+			
+			
+		}
+		</script>
+	</head>
+	<body>
+		Inicio: <input type="number" id="year1">
+		<br>
+		Fin:<input type="number" id="year2">
+		<br>
+		<textarea  id="result" cols="30" rows="10"></textarea>
+		<br>
+		<button onclick="mostrar_bisiestos()">Calcular</button>
+	</body>
+</html>

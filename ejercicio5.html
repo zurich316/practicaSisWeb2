@@ -1,0 +1,108 @@
+<html>
+	<head>
+
+		<style>
+		#cancha{
+			border: 5px solid black;
+		}
+		</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+		<script>
+		$(document).ready(function(){
+			var dir = 'ad'
+			var x = 450;
+			var y = 300;
+			var contexto;
+
+			function init(){
+			  canvas = $('#cancha')
+			  contexto = canvas[0].getContext("2d");
+			  return setInterval(draw, 10);
+			}
+			
+			function circle(xpos, ypos){
+			  contexto.beginPath();
+			  contexto.arc(xpos, ypos, 15, 0, Math.PI*2, true); 
+			  contexto.closePath();
+			  contexto.fill();		
+			}
+
+			function clear(){
+				contexto.clearRect(0, 0, 900, 600);
+			}
+
+
+			function draw() {
+				if (dir === 'ad')//Abajo derecha
+				{
+					clear();
+					circle(x,y);
+					x+=2;
+					y+=4;
+					if (y>600)
+					{
+						dir="ud"
+					}
+					if (x>900)
+					{
+						dir="ai"
+					}
+				}
+				if (dir === 'ud') // Arriba derecha
+				{
+					clear();
+					circle(x,y);
+					x+=2;
+					y-=4;
+					if (y==0)
+					{
+						dir="ad"
+					}
+					if (x>900)
+					{
+						dir="ui"
+					}
+				}
+				if (dir === 'ai') //Abajo izquierda
+				{
+					clear();
+					circle(x,y);
+					x-=2;
+					y+=4;
+					if (y>600)
+					{
+						dir="ui"
+					}
+					if (x==0)
+					{
+						dir="ad"
+					}
+				}
+				if (dir === 'ui') // Arriba izquierda
+				{
+					clear();
+					circle(x,y);
+					x-=2;
+					y-=4;
+					if (y==0)
+					{
+						dir="ai"
+					}
+					if (x==0)
+					{
+						dir="ui"
+					}
+				}
+			}
+			 
+			init();
+		});
+
+		</script>
+	</head>
+	<body>
+	<canvas id="cancha" width="900" height="600"></canvas>
+
+	</body>
+</html>

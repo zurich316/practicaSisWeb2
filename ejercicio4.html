@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script>
+		$("#usuario").focus(function(){
+			$('#usuario').css('border-color','red');
+			var tam = document.getElementById('usuario').value.length;
+			if(tam<6)
+			{
+				$('#usuario').css('border-color','red');
+				
+			}
+			else
+			{
+				$('#usuario').css('border-color','green');
+			}
+			
+		});
+		</script>
+	</head>
+	<body>
+		<h1>Nuevo usuario</h1>
+		<form action="">
+			Usuario: <input type="text" name="usuario" id="usuario"><br>
+			Password: <input type="password" name="password" id="password"> <br>	
+			Ciudad: <select name="ciudad" id="ciudad">
+				<option value="">Elija</option>
+				<option value="Cochabamba">Cochabamba</option>
+				<option value="La Paz">La Paz</option>
+				<option value="Santa Cruz">Santa Cruz</option>
+			</select>
+		</form>
+	</body>
+</html>
